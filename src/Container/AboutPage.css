@@ -1,0 +1,55 @@
+/* ABOUT PAGE */
+.about-page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #102542;
+  }
+  
+  .about-page-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-section {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .about-section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .about-image {
+    flex: 1 1 300px;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-section div {
+    flex: 2 1 500px;
+  }
+  
+  .about-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-footer {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  

@@ -1,0 +1,59 @@
+/* ========== TERMS OF SERVICE ========== */
+.terms-of-service-page-container {
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .terms-of-service-page-container h1 {
+    font-size: 2.5rem;
+    color: #2C3D56;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  
+  .terms-of-service-page-container h2 {
+    font-size: 1.6rem;
+    color: #2C3D56;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .terms-of-service-page-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .terms-of-service-page-container a {
+    color: #2C3D56;
+    text-decoration: underline;
+  }
+  
+  .terms-of-service-page-container a:hover {
+    color: #144b49;
+  }
+  
+  @media (max-width: 600px) {
+    .privacy-page-container,
+    .terms-of-service-page-container {
+      padding: 1.2rem;
+    }
+  
+    .privacy-page-container h1,
+    .terms-of-service-page-container h1 {
+      font-size: 2rem;
+    }
+  
+    .privacy-page-container h2,
+    .terms-of-service-page-container h2 {
+      font-size: 1.4rem;
+    }
+  
+    .privacy-page-container p,
+    .terms-of-service-page-container p {
+      font-size: 0.95rem;
+    }
+  }
