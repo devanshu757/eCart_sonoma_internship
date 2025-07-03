@@ -1,34 +1,29 @@
 import "./App.css";
 import React from "react";
-import UnauthorizedRoutes from "./UnauthorizedRoutes";
-import AuthorizedRoutes from "./AuthorizedRoutes";
-import { useAuth } from "./Components/AuthContext";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+// import { useAuth } from "./Components/AuthContext";
 
-
+// Route arrays
+import CommonRoutes from "./CommonRoutes";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 function App() {
-  const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
 
   return (
     <BrowserRouter>
-   
       <div className="App">
         <Header />
         <Routes>
-          {isLoggedIn ? (
-            <Route path="/*" element={<AuthorizedRoutes />} />
-          ) : (
-            <Route path="/*" element={<UnauthorizedRoutes />} />
-          )}
-        </Routes>
+  {CommonRoutes}
+  {ProtectedRoutes}
+</Routes>
+
         <Footer />
       </div>
-    
-  </BrowserRouter>
-  
+    </BrowserRouter>
   );
 }
 

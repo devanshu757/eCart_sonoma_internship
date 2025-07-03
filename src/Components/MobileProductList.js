@@ -10,18 +10,40 @@ export default function MobileProductList(props) {
 
   const [cartState, cartDispatch] = useCart();
 
-  const addToCart = (item) => {
-    cartDispatch({ type: "ADD_TO_CART", payload: item });
+  const MAX_CART_ITEMS = 50;
+
+  const handleAddToCart = (product) => {
+    const totalQuantity = cartState.cartItems.reduce(
+      (total, item) => total + (item.quantity || 1),
+      0
+    );
+
+    if (totalQuantity >= MAX_CART_ITEMS) {
+    Toastify({
+                    text: "You cannot add more than 50 items in cart.",
+                    className: "info",
+                    style: {
+                      background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
+                    },
+                  }).showToast();
+      return;
+    }
+
+    cartDispatch({
+      type: "ADD_TO_CART",
+      payload: product,
+    });
+
     localStorage.setItem(
       "cartItems",
-      JSON.stringify([...cartState.cartItems, item])
+      JSON.stringify([...cartState.cartItems, product])
     );
 
     Toastify({
       text: "Your Product has been added to Cart!",
       className: "info",
       style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        background: "linear-gradient(to right, rgb(35, 37, 96), #96c93d)",
       },
     }).showToast();
     console.log(cartState.cartItems);
@@ -47,16 +69,10 @@ export default function MobileProductList(props) {
               )}
             </Link>
           ) : (
-            <button className="btn" onClick={() => addToCart(props)}>
+            <button className="btn" onClick={() => handleAddToCart(props)}>
               Add to Cart
             </button>
           )}
-
-          {/* <Link to={cartState.cartItems.some((item) => item.id === id) && isLoggedIn ? "/cart" : "/login"}>
-            <button className="btn" onClick={() => cartState.cartItems.some((item) => item.id === id) ? null : addToCart(props)}>
-              {cartState.cartItems.some((item) => item.id === id) && isLoggedIn ? 'View Cart' : 'Add to Cart'}
-            </button>
-          </Link> */}
 
           <Link to={`/mobileproducts/${id}`}>
             <button className="btn">More Info</button>

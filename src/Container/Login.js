@@ -28,7 +28,7 @@ const Login = () => {
         text: "Passwords do not match. Please try again.",
         className: "info",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
         },
       }).showToast();
       return;
@@ -36,10 +36,10 @@ const Login = () => {
     if (formData.email === "dev@gmail.com" && formData.password === "12345") {
       login();
       Toastify({
-        text: "Passwords do not match. Please try again.",
+        text: "Login Successful",
         className: "info",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
         },
       }).showToast();
       // Reset form data after successful login
@@ -53,7 +53,7 @@ const Login = () => {
         text: "Invalid credentials. Please try again.",
         className: "info",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
         },
       }).showToast();
       setFormData({

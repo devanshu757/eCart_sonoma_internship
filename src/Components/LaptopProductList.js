@@ -8,19 +8,46 @@ export default function LaptopProductList(props) {
   const { id, image, title, rating, price } = props;
   
   const [cartState, cartDispatch] = useCart();
-
-  const addToCart = (item) => {
-    cartDispatch({ type: "ADD_TO_CART", payload: item });
-    
-    Toastify({
-      text: "Your Product has been added to Cart!",
-      className: "info",
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+  
+    const MAX_CART_ITEMS = 50;
+  
+    const handleAddToCart = (product) => {
+      const totalQuantity = cartState.cartItems.reduce(
+        (total, item) => total + (item.quantity || 1),
+        0
+      );
+  
+      if (totalQuantity >= MAX_CART_ITEMS) {
+        Toastify({
+                text: "You cannot add more than 50 items in cart.",
+                className: "info",
+                style: {
+                  background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                },
+              }).showToast();
+        return;
       }
-    }).showToast();
-    console.log(cartState.cartItems); 
-  };
+  
+      cartDispatch({
+        type: "ADD_TO_CART",
+        payload: product,
+      });
+  
+      localStorage.setItem(
+        "cartItems",
+        JSON.stringify([...cartState.cartItems, product])
+      );
+  
+      Toastify({
+        text: "Your Product has been added to Cart!",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+        },
+      }).showToast();
+      console.log(cartState.cartItems);
+    };
+  
   
 
   return (
@@ -36,7 +63,7 @@ export default function LaptopProductList(props) {
                      <button className="btn">View Cart</button>
                    </Link>
                  ) : (
-                   <button className="btn" onClick={() => addToCart(props)}>
+                   <button className="btn" onClick={() => handleAddToCart(props)}>
                      Add to Cart
                    </button>
                  )}

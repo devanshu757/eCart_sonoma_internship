@@ -5,6 +5,22 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const initialCartState = {
     cartItems: JSON.parse(localStorage.getItem("cartItems")) || [], // Load from localStorage
+    totalAmount: 0,
+    quantity: 0,
+    shipping: 0,
+    tax: 0,
+    price: 0,
+    total: 0,
+    paymentInfo: JSON.parse(localStorage.getItem("paymentInfo")) || null,
+    razorpayOrderId: "",
+    razorpayPaymentId: "",
+    razorpaySignature: "",
+    razorpayKey: "rzp_test_8b1c0d2f3b1c0d",
+    razorpayAmount: 0,
+    razorpayCurrency: "INR",
+    razorpayName: "Sonoma E-commerce",
+    razorpayDescription: "E-commerce Payment",
+    
   };
 
   const cartReducer = (state, action) => {

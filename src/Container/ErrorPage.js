@@ -1,25 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ErrorPage.css";
-import { useAuth }  from "../Components/AuthContext";
 
-function ErrorPage() {
-  const { isLoggedIn } = useAuth();
+const ErrorPage = ({ message, show, onClose }) => {
+  if (!show) return null;
+
   return (
-   (isLoggedIn) ? (
-    <div className="error-page">
-      <h1>404 - Page Not Found</h1>
-      <h4>Sorry, the page you are looking for does not exist.</h4>
-      <button className="btn"><Link to="/">Go to Home</Link></button>
+    <div className="error-modal-overlay">
+      <div className="error-modal">
+        <h2>Page Not Found</h2>
+        <p>{message || "Sorry, the page you are looking for does not exist."}</p>
+        <div className="modal-buttons">
+          <Link to="/" className="btn">Go to Home</Link>
+          <Link to="/login" className="btn">Login</Link>
+        </div>
+        <button className="close-button" onClick={onClose}>×</button>
+      </div>
     </div>
-   ) : (
-    <div className="error-page">
-      <h1>Login to access your cart items</h1>
-      <h4>The page does not exist as you are currently not logged in. Please login to continue by clicking below</h4>
-      <button className="btn"><Link to="/login">Login</Link></button>
-    </div>
-   )
   );
-}
+};
 
 export default ErrorPage;
