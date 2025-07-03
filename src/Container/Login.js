@@ -28,7 +28,7 @@ const Login = () => {
         text: "Passwords do not match. Please try again.",
         className: "info",
         style: {
-          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
         },
       }).showToast();
       return;
@@ -39,7 +39,7 @@ const Login = () => {
         text: "Login Successful",
         className: "info",
         style: {
-          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
         },
       }).showToast();
       // Reset form data after successful login
@@ -53,7 +53,7 @@ const Login = () => {
         text: "Invalid credentials. Please try again.",
         className: "info",
         style: {
-          background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
         },
       }).showToast();
       setFormData({

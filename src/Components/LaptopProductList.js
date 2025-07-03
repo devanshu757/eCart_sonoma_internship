@@ -22,7 +22,7 @@ export default function LaptopProductList(props) {
                 text: "You cannot add more than 50 items in cart.",
                 className: "info",
                 style: {
-                  background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                  background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
                 },
               }).showToast();
         return;
@@ -42,7 +42,7 @@ export default function LaptopProductList(props) {
         text: "Your Product has been added to Cart!",
         className: "info",
         style: {
-          background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+          background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
         },
       }).showToast();
       console.log(cartState.cartItems);

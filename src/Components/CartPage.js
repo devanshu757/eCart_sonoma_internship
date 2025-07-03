@@ -28,7 +28,7 @@ const CartPage = () => {
                      text: "Your cart is empty. Please add items to the cart.",
                      className: "info",
                      style: {
-                       background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                       background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
                      },
                    }).showToast();
     }
@@ -37,10 +37,12 @@ const CartPage = () => {
   const tax = 18,
     shipping = 50;
 
-  const totalAmount = cartState.cartItems.reduce(
-    (total, item) => tax + shipping + total + item.price * (item.quantity || 1),
+  const subtotalAmount = cartState.cartItems.reduce(
+    (total, item) => total + item.price * (item.quantity || 1),
     0
   );
+
+  const totalAmount = subtotalAmount + tax + shipping;
 
   // Function to handle Razorpay payment
 
@@ -68,7 +70,7 @@ const CartPage = () => {
                      text: "Razorpay SDK failed to load. Are you online?",
                      className: "info",
                      style: {
-                       background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                       background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
                      },
                    }).showToast();
       return;
@@ -83,7 +85,7 @@ const CartPage = () => {
                      text: "Server error. Are you online?",
                      className: "info",
                      style: {
-                       background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                       background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
                      },
                    }).showToast();
       return;
@@ -118,7 +120,7 @@ const CartPage = () => {
                         text: "Payment successful! Check localStorage for details.",
                         className: "info",
                         style: {
-                          background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                          background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
                         },
                       }).showToast();
       },
@@ -153,7 +155,7 @@ const CartPage = () => {
                       text: "You cannot add more than 50 items in cart.",
                       className: "info",
                       style: {
-                        background: "linear-gradient(to right, #2C3D56, #D4A59A)",
+                        background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
                       },
                     }).showToast();
       return;
@@ -225,7 +227,7 @@ const CartPage = () => {
         <div className="checkout-details">
           <div>
             <span>Subtotal</span>
-            <span>₹ {totalAmount}</span>
+            <span>₹ {subtotalAmount}</span>
           </div>
           <div>
             <span>Shipping</span>

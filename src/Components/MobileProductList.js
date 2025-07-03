@@ -23,7 +23,7 @@ export default function MobileProductList(props) {
                     text: "You cannot add more than 50 items in cart.",
                     className: "info",
                     style: {
-                      background: "linear-gradient(to right,rgb(35, 37, 96), #96c93d)",
+                      background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
                     },
                   }).showToast();
       return;
@@ -43,7 +43,7 @@ export default function MobileProductList(props) {
       text: "Your Product has been added to Cart!",
       className: "info",
       style: {
-        background: "linear-gradient(to right, rgb(35, 37, 96), #96c93d)",
+        background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
       },
     }).showToast();
     console.log(cartState.cartItems);
