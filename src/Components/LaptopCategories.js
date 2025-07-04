@@ -10,7 +10,7 @@ const LaptopCategories = () => {
   const selectedFilters = useSelector((state) => state.filter.selectedFilters);
   const minPrice = useSelector((state) => state.filter.minPrice);
   const maxPrice = useSelector((state) => state.filter.maxPrice);
-  const categories = ["zebronics", "apex", "acer", "lenovo", "asus", "chuvi","dell","apple"];
+  const categories = ["zebronics","apple", "apex", "acer", "lenovo", "asus", "chuvi","dell"];
 
   const handleCategoryChange = (category) => {
     let updated;
