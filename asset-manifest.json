@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/eCart_sonoma_internship/static/css/main.61d0a584.css",
+    "main.js": "/eCart_sonoma_internship/static/js/main.f86feead.js",
+    "index.html": "/eCart_sonoma_internship/index.html",
+    "main.61d0a584.css.map": "/eCart_sonoma_internship/static/css/main.61d0a584.css.map",
+    "main.f86feead.js.map": "/eCart_sonoma_internship/static/js/main.f86feead.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61d0a584.css",
+    "static/js/main.f86feead.js"
+  ]
+}
