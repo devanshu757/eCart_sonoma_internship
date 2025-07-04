@@ -24,13 +24,13 @@ const CartPage = () => {
 
   useEffect(() => {
     if (cartState.cartItems.length === 0) {
-     Toastify({
-                     text: "Your cart is empty. Please add items to the cart.",
-                     className: "info",
-                     style: {
-                       background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
-                     },
-                   }).showToast();
+      Toastify({
+        text: "Your cart is empty. Please add items to the cart.",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
+        },
+      }).showToast();
     }
   }, [cartState.cartItems.length]);
 
@@ -66,13 +66,13 @@ const CartPage = () => {
     );
 
     if (!res) {
-     Toastify({
-                     text: "Razorpay SDK failed to load. Are you online?",
-                     className: "info",
-                     style: {
-                       background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
-                     },
-                   }).showToast();
+      Toastify({
+        text: "Razorpay SDK failed to load. Are you online?",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
+        },
+      }).showToast();
       return;
     }
 
@@ -81,20 +81,20 @@ const CartPage = () => {
     });
 
     if (!result) {
-     Toastify({
-                     text: "Server error. Are you online?",
-                     className: "info",
-                     style: {
-                       background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
-                     },
-                   }).showToast();
+      Toastify({
+        text: "Server error. Are you online?",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
+        },
+      }).showToast();
       return;
     }
 
     const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: "rzp_test_mDUebrkYc2EP4q", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_mDUebrkYc2EP4q",
       amount: amount.toString(),
       currency: currency,
       name: "ECart Corp.",
@@ -117,12 +117,12 @@ const CartPage = () => {
         localStorage.removeItem("cartItems");
 
         Toastify({
-                        text: "Payment successful! Check localStorage for details.",
-                        className: "info",
-                        style: {
-                          background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
-                        },
-                      }).showToast();
+          text: "Payment successful! Check localStorage for details.",
+          className: "info",
+          style: {
+            background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
+          },
+        }).showToast();
       },
 
       prefill: {
@@ -152,12 +152,12 @@ const CartPage = () => {
 
     if (totalQuantity >= MAX_CART_ITEMS) {
       Toastify({
-                      text: "You cannot add more than 50 items in cart.",
-                      className: "info",
-                      style: {
-                        background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
-                      },
-                    }).showToast();
+        text: "You cannot add more than 50 items in cart.",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right,  #2C3D56, #E8DCC5)",
+        },
+      }).showToast();
       return;
     }
 
@@ -170,7 +170,7 @@ const CartPage = () => {
   return (
     <div className="cart-container">
       {/* Cart Items Section */}
-  
+
       <div className="cart-items-section">
         <h2>Your Cart</h2>
         <div className="cart-table-header">
@@ -252,24 +252,6 @@ const CartPage = () => {
 };
 
 export default CartPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

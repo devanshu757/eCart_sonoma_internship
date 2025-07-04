@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import laptops from "../data/laptops.json";
-import "./MoreInfo.css"; 
+import "./MoreInfo.css";
 
-const LaptopMoreInfo = () => {
+const MobileMoreInfo = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -12,25 +12,35 @@ const LaptopMoreInfo = () => {
     setProduct(matchedProduct);
   }, [id]);
 
-  if (!product) {
-    return <div>Loading product...</div>;
-  }
+  if (!product) return <div>Loading product...</div>;
 
   return (
+    <div className="more-info-header">
+  
+          <button className="btn"><Link to="/mobileProducts">←  Back To Products</Link></button>
+        
     <div className="more-info-container">
-      <h1>{product.title}</h1>
-      <img src={product.image} alt={product.title} style={{ width: "150px" }} />
-      <p>
-        <strong>Rating:</strong> {product.rating}
-      </p>
-      <p>
-        <strong>Price:</strong> {product.price}
-      </p>
-      <p>
-        <strong>Description:</strong> {product.details}
-      </p>
+      
+      <div className="product-image1">
+        <img src={product.image} alt={product.title} />
+      </div>
+
+      <div className="product-details">
+        <h1>{product.title}</h1>
+        <p className="rating">
+          <strong>Ratings:</strong> ⭐ {product.rating}  
+        </p>
+        <p className="price">
+          ₹{product.price}
+        </p>
+        <p className="description">
+          <strong>Description:</strong> {product.details}
+        </p>
+
+        </div>
+      </div>
     </div>
   );
 };
 
-export default LaptopMoreInfo;
+export default MobileMoreInfo;

@@ -25,7 +25,7 @@ const ContactPage = () => {
         <button className="btn" type="submit" onClick={(e) => {
           e.preventDefault();
           alert("Thank you for contacting us! We will get back to you soon.");
-          document.querySelector(".contact-form").reset();
+          // document.querySelector(".contact-form").reset();
         }}>
           Submit
         </button>

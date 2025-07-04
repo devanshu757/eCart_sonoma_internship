@@ -19,13 +19,13 @@ export default function MobileProductList(props) {
     );
 
     if (totalQuantity >= MAX_CART_ITEMS) {
-    Toastify({
-                    text: "You cannot add more than 50 items in cart.",
-                    className: "info",
-                    style: {
-                      background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
-                    },
-                  }).showToast();
+      Toastify({
+        text: "You cannot add more than 50 items in cart.",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #2C3D56, #E8DCC5)",
+        },
+      }).showToast();
       return;
     }
 
