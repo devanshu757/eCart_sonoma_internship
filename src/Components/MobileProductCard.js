@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MobileProductList from "./MobileProductList.js";
 import PhoneCategories from "./PhoneCategories.js";
 import mobiles from "../data/mobiles.json";
@@ -6,7 +6,7 @@ import "./ProductCard.css";
 import { useSelector } from "react-redux";
 
 export default function MobileProductCard() {
-  const [filteredData, setFilteredData] = React.useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const selectedFilters = useSelector((state) => state.filter.selectedFilters);
   const minPrice = useSelector((state) => state.filter.minPrice);
   const maxPrice = useSelector((state) => state.filter.maxPrice);
