@@ -1,7 +1,7 @@
 # 🛒 eCart – React E-Commerce Frontend UI
 
-**eCart** is a fully responsive and modern e-commerce frontend project built using **React.js**. Developed as part of an internship task, this project is designed to mimic the look and feel of a real-world e-commerce website with features like product listings, detailed product views, and smooth navigation — all crafted using only frontend technologies.
-
+**eCart** is a fully responsive and modern e-commerce frontend project built using **React.js**. Developed as part of an internship task, this project is designed to mimic the look and feel of a real-world e-commerce website with features like product listings, detailed product views, and smooth navigation — all crafted using only frontend technologies. Backend is there only for Razorpay payment integration.
+ 
 ## 📌 Features
 
 🔹 Clean and responsive UI built with React & CSS
