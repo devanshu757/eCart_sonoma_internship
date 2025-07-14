@@ -1,3 +1,54 @@
+# 🛒 eCart – React E-Commerce Frontend UI
+
+**eCart** is a fully responsive and modern e-commerce frontend project built using **React.js**. Developed as part of an internship task, this project is designed to mimic the look and feel of a real-world e-commerce website with features like product listings, detailed product views, and smooth navigation — all crafted using only frontend technologies.
+
+## 📌 Features
+
+🔹 Clean and responsive UI built with React & CSS
+🔹 Dynamic routing with React Router
+🔹 Detailed product view pages (title, ratings, price, description)
+🔹 Category-based product rendering
+🔹 Professional styling with hover animations and transitions
+🔹 Mobile-friendly layout using media queries
+🔹 JSON-based mock data simulating real API
+
+## 🧪 Technologies Used
+
+* ⚛️ React.js (Hooks, Routing, State)
+* 🎨 CSS3 (Custom styles, animations, responsive design)
+* 📁 JSON (Static data source for products)
+* 🔗 React Router DOM
+* 🧠 Functional components with modular structure
+
+## 🚀 Getting Started Locally
+
+1. **Clone the repository**
+
+2. 
+   git clone (https://github.com/devanshu757/eCart_sonoma_internship.git)
+   cd ecart
+  
+3. **Install dependencies**
+   npm install
+
+4. **Start the development server**
+   npm start
+
+5. Open your browser at `http://localhost:3000`
+
+## 🌐 Live Demo
+
+👉 [Deployed on GitHub Pages](https://github.com/devanshu757/eCart_sonoma_internship.git)
+## 📌 Note
+
+This project was created with **only frontend technologies** and does not include backend or real-time API integration. All data is handled via local JSON files for simulation purposes.
+
+## ✨ Author
+
+Devanshu Maru
+Frontend Developer Intern
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
